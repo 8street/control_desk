@@ -1,0 +1,47 @@
+{
+    "configurations": [
+    {
+    "inheritEnvironments": [ "linux-gcc-arm" ],
+    "name": "firmware",
+    "includePath": [
+    // Типы данных
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Enterprise\\Linux\\gcc_arm\\arm-none-eabi\\include",
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Enterprise\\Linux\\gcc_arm\\arm-none-eabi\\include\\sys",
+    // Файлы проекта
+    "${workspaceRoot}\\Drivers\\**",
+    "${workspaceRoot}\\Middlewares\\**",
+    "${workspaceRoot}\\Inc\\**",
+    "${workspaceRoot}\\Src\\**"
+    ],
+    "defines": [
+    // Скопировано из Makefile
+    "USE_HAL_DRIVER",
+    "STM32F042x6",
+    "M0",
+    "GCC_ARMCM0"
+    ],
+    "intelliSenseMode": "linux-gcc-arm",
+    "browse": {
+    "path": [
+    "${workspaceRoot}"
+    ],
+    "limitSymbolsToIncludedHeaders": false,
+    "databaseFilename": ""
+    }
+    }
+    ],
+    "environments": [
+    {
+    // Для сборки в Windows
+    "BUILDTOOLS": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Enterprise\\Linux\\GNU MCU Eclipse\\Build Tools\\2.9-20170629-1013\"",
+    // GCC_PATH нужен для компиляции в Windows, для компиляции в WSL путь прописывается в Makefile
+    "GCC_PATH": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Enterprise\\Linux\\gcc_arm\\bin\"",
+    // Для прошивки и отладки
+    "JLINKPATH": "C:\\Data\\JLink_V632a",
+    // Для компиляции в WSL
+    "BASHPATH": "C:\\Windows\\sysnative",
+    // Добавляем всё в PATH
+    "PATH": "${env.BUILDTOOLS};${env.BUILDTOOLS}\\bin;${env.JLINKPATH};${env.BASHPATH};${env.PATH}"
+    }
+    ]
+   }
